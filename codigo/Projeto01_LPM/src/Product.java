@@ -1,4 +1,5 @@
 
+
 public class Product {
     private String description;
     private double costPrice;
