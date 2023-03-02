@@ -8,7 +8,7 @@ Modernização da gestão de estoque de uma mercearia.
 
 - Pedro Luis Gonçalves
 - Kaio Henrique Silvera
-- Nome completo do aluno 3
+- Yghor Ribas Gomes
 - Nome completo do aluno 4
 - Nome completo do aluno 6
 
