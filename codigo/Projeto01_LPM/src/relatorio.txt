@@ -1,0 +1,4 @@
+Registrar quantidades e valor arrecadado com as vendas de um produto
+e custos de aquisição de produtos 
+
+ 
