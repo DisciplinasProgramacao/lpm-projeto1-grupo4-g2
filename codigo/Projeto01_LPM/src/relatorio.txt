@@ -1,9 +1,7 @@
-PRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  IDPRODUTO1  -  QUANTIDADE -  ID
-PRODUTO2  -  QUANTIDADE -  ID
+ID: 1 | Descrição: PRODUTO1 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 2 | Descrição: PRODUTO2 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 3 | Descrição: PRODUTO3 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 4 | Descrição: PRODUTO4 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 5 | Descrição: PRODUTO5 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 6 | Descrição: PRODUTO5 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 7 | Descrição: PRODUTO5 | Preço de custo: 0.0 | Preço de venda: 0.0 | Quantidade em estoque: 0 | Quantidade vendida: 0 | Custo de aquisição: 0.0

@@ -1,21 +1,28 @@
 package entities;
 
 public class Product {
+	
+	private final double taxes = 0.18;
+	
     private String descricao;
     private double precoCusto;
+    private int id;
     private double precoVenda;
     private double margemLucro;
     private int quantidadeEstoque;
     private int quantidadeVendida;
     private double custoAquisicao;
-    private int id;
+    
 
-    public Product(String descricao, double precoCusto, int id) {
+    public Product(String descricao, double precoCusto, int id ) {
+    	if(descricao.length() >= 3) {    		
         this.descricao = descricao;
+    	} else {
+    		this.descricao = null;
+    	}
         this.precoCusto = precoCusto;
-        this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
-        this.precoVenda = Math.round(this.precoCusto + this.margemLucro + (this.precoCusto + this.margemLucro) * 0.18);
         this.id = id;
+        
     }   
 
     public String getDescricao() {
@@ -39,7 +46,8 @@ public class Product {
 	}
 
 	public void setPrecoVenda(double precoVenda) {
-		this.precoVenda = precoVenda;
+		this.precoVenda = Math.round(this.precoCusto + this.margemLucro + (this.precoCusto + this.margemLucro) * taxes);
+
 	}
 
 	public double getMargemLucro() {
@@ -47,7 +55,7 @@ public class Product {
 	}
 
 	public void setMargemLucro(double margemLucro) {
-		this.margemLucro = margemLucro;
+		this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
 	}
 
 	public int getQuantidadeEstoque() {
@@ -80,6 +88,22 @@ public class Product {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public double valorArrecadado(String descricao, int id) {
+		return getQuantidadeVendida() * getPrecoVenda();		
+	}
+	
+	public double valorGasto(String descricao, int id) {
+		return getQuantidadeEstoque() * getPrecoCusto();
+	}
+	
+	public String nivelEstoque(String descricao, int id) {
+		 if (getQuantidadeEstoque() < 10 ) {
+			 return "Estoque crítico, contatar fornecedor";
+		 } else {
+			 return "Estoque ok";
+		 }
 	}
 
 	public String toString() {
