@@ -64,6 +64,36 @@ public class Program {
 		rep1.buscarProdutoPorId(2).setPrecoCusto(10.0);
 		rep1.buscarProdutoPorId(2).setPrecoVenda(20.0);
 
+		rep1.buscarProdutoPorId(3).setCustoAquisicao(600.0);
+		rep1.buscarProdutoPorId(3).setQuantidadeEstoque(5);
+		rep1.buscarProdutoPorId(3).setMargemLucro(25);
+		rep1.buscarProdutoPorId(3).setPrecoCusto(45.0);
+		rep1.buscarProdutoPorId(3).setPrecoVenda(90.0);
+
+		rep1.buscarProdutoPorId(4).setCustoAquisicao(50.0);
+		rep1.buscarProdutoPorId(4).setQuantidadeEstoque(50);
+		rep1.buscarProdutoPorId(4).setMargemLucro(30);
+		rep1.buscarProdutoPorId(4).setPrecoCusto(20.0);
+		rep1.buscarProdutoPorId(4).setPrecoVenda(30.0);
+
+		rep1.buscarProdutoPorId(5).setCustoAquisicao(100.0);
+		rep1.buscarProdutoPorId(5).setQuantidadeEstoque(25);
+		rep1.buscarProdutoPorId(5).setMargemLucro(20);
+		rep1.buscarProdutoPorId(5).setPrecoCusto(50.0);
+		rep1.buscarProdutoPorId(5).setPrecoVenda(150.0);
+
+		rep1.buscarProdutoPorId(6).setCustoAquisicao(10.0);
+		rep1.buscarProdutoPorId(6).setQuantidadeEstoque(100);
+		rep1.buscarProdutoPorId(6).setMargemLucro(22);
+		rep1.buscarProdutoPorId(6).setPrecoCusto(5.0);
+		rep1.buscarProdutoPorId(6).setPrecoVenda(20.0);
+
+		rep1.buscarProdutoPorId(7).setCustoAquisicao(500.0);
+		rep1.buscarProdutoPorId(7).setQuantidadeEstoque(25);
+		rep1.buscarProdutoPorId(7).setMargemLucro(20);
+		rep1.buscarProdutoPorId(7).setPrecoCusto(10.0);
+		rep1.buscarProdutoPorId(7).setPrecoVenda(20.0);
+
 		
 		System.out.println("================ MERCEARIA =======================");
 		
@@ -108,7 +138,8 @@ public class Program {
 		            }
 		            break;
 		        case 5:
-		        	System.out.print("Valor total do estoque: " + rep1.valorTotaldoEstoque());
+		        	double valorTotal = rep1.valorTotaldoEstoque();
+		        	System.out.printf("Valor total do estoque: R$ " + "%.2f" , valorTotal);
 		        	System.out.println();
 		        	break;
 		        case 0:

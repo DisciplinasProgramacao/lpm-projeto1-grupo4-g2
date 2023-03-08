@@ -50,12 +50,13 @@ public class Product {
 
 	}
 
-	public double getMargemLucro() {
+	public double getMargemLucro(double margemLucro) {
 		return margemLucro;
 	}
 
 	public void setMargemLucro(double margemLucro) {
 		this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
+		setPrecoVenda(precoVenda);
 	}
 
 	public int getQuantidadeEstoque() {

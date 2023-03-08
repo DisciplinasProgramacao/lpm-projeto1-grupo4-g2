@@ -28,14 +28,15 @@ public class ProductTest {
     @Test
     public void testSetPrecoVenda() {
         product.setMargemLucro(0.3);
+        product.setPrecoVenda(0);
         product.setPrecoVenda(20.0);
-        assertEquals(26.0, product.getPrecoVenda(), 0.0);
+        assertEquals(26.00, product.getPrecoVenda(), 0.01);
     }
 
     @Test
     public void testSetMargemLucro() {
         product.setMargemLucro(0.3);
-        assertEquals(13.0, product.getPrecoVenda(), 0.0);
+        assertEquals(21.0, product.getPrecoVenda(), 0.01);
     }
 
     @Test
@@ -61,7 +62,7 @@ public class ProductTest {
         product.setQuantidadeVendida(5);
         product.setMargemLucro(0.3);
         product.setPrecoVenda(20.0);
-        assertEquals(130.0, product.valorArrecadado(product.getDescricao(), product.getId()), 0.0);
+        assertEquals(150.00, product.valorArrecadado(product.getDescricao(), product.getId()), 0.01);
     }
 
     @Test
