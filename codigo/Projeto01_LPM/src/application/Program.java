@@ -47,6 +47,11 @@ public class Program {
 		} catch(IOException e) {
 			System.out.println("Error reading file: " + e.getMessage());
 		}		
+
+		
+		System.out.println("================ MERCEARIA =======================");
+		
+		System.out.println();
 		
 		// ATUALIZAR O RELATORIO
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("relatorio.txt"))) {
