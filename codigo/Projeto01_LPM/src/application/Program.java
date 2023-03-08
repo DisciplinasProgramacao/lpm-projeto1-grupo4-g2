@@ -57,6 +57,7 @@ public class Program {
 		rep1.buscarProdutoPorId(1).setPrecoCusto(40.0);
 		rep1.buscarProdutoPorId(1).setPrecoVenda(60.0);
 		
+		
 		rep1.buscarProdutoPorId(2).setCustoAquisicao(500.0);
 		rep1.buscarProdutoPorId(2).setQuantidadeEstoque(25);
 		rep1.buscarProdutoPorId(2).setMargemLucro(20);
@@ -75,6 +76,7 @@ public class Program {
 		System.out.println("2 - Adicionar produto");
 		System.out.println("3 - Atualizar produto");
 		System.out.println("4 - Ver estoque");
+		System.out.println("5 - Valor total do estoque");
 		System.out.println("0 - Sair do programa");
 		int n;
 
@@ -105,6 +107,10 @@ public class Program {
 		                System.out.println(p.toString());
 		            }
 		            break;
+		        case 5:
+		        	System.out.print("Valor total do estoque: " + rep1.valorTotaldoEstoque());
+		        	System.out.println();
+		        	break;
 		        case 0:
 		            System.out.println("Encerrando programa...");
 		            break;
