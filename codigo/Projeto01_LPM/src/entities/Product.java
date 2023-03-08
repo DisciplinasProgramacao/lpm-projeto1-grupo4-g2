@@ -53,10 +53,24 @@ public class Product {
 	public double getMargemLucro(double margemLucro) {
 		return margemLucro;
 	}
-
+	//public void setMargemLucro(double margemLucro) {
+	//	this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
+	//}
+	
 	public void setMargemLucro(double margemLucro) {
+
 		this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
 		setPrecoVenda(precoVenda);
+	    double valorMargemLucro = margemLucro / 100.0;
+	    double precoVenda = precoCusto * (1 + valorMargemLucro + taxes);
+	    
+	    if (valorMargemLucro >= 0.3 && valorMargemLucro <= 0.8) {
+	        this.margemLucro = valorMargemLucro;
+	        this.precoVenda = Math.round(precoVenda * 100) / 100.0;
+	    } else {
+	        throw new IllegalArgumentException("A margem de lucro deve estar entre 30 e 80% do valor do preço de custo.");
+	    }
+
 	}
 
 	public int getQuantidadeEstoque() {
