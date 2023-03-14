@@ -1,5 +1,5 @@
 ID: 1 | Descrição: PRODUTO1 | Preço de custo: 40.0 | Preço de venda: 70.8 | Quantidade em estoque: 5 | Quantidade vendida: 10 | Custo de aquisição: 1000.0
-ID: 2 | Descrição: PRODUTO2 | Preço de custo: 10.0 | Preço de venda: 17.7 | Quantidade em estoque: 25 | Quantidade vendida: 0 | Custo de aquisição: 500.0
+ID: 2 | Descrição: PRODUTO2 | Preço de custo: 10.0 | Preço de venda: 17.7 | Quantidade em estoque: 24 | Quantidade vendida: 1 | Custo de aquisição: 500.0
 ID: 3 | Descrição: PRODUTO3 | Preço de custo: 45.0 | Preço de venda: 79.65 | Quantidade em estoque: 5 | Quantidade vendida: 0 | Custo de aquisição: 600.0
 ID: 4 | Descrição: PRODUTO4 | Preço de custo: 20.0 | Preço de venda: 35.4 | Quantidade em estoque: 50 | Quantidade vendida: 0 | Custo de aquisição: 50.0
 ID: 5 | Descrição: PRODUTO5 | Preço de custo: 50.0 | Preço de venda: 88.5 | Quantidade em estoque: 25 | Quantidade vendida: 0 | Custo de aquisição: 100.0
@@ -12,4 +12,4 @@ ID: 11 | Descrição: PRODUTO11 | Preço de custo: 600.0 | Preço de venda: 1062
 ID: 12 | Descrição: PRODUTO12 | Preço de custo: 650.0 | Preço de venda: 1150.5 | Quantidade em estoque: 15 | Quantidade vendida: 0 | Custo de aquisição: 0.0
 ID: 13 | Descrição: PRODUTO13 | Preço de custo: 700.0 | Preço de venda: 1239.0 | Quantidade em estoque: 30 | Quantidade vendida: 0 | Custo de aquisição: 0.0
 ID: 14 | Descrição: PRODUTO14 | Preço de custo: 800.0 | Preço de venda: 1416.0 | Quantidade em estoque: 30 | Quantidade vendida: 0 | Custo de aquisição: 0.0
-ID: 15 | Descrição: PRODUTO15 | Preço de custo: 1000.0 | Preço de venda: 1770.0 | Quantidade em estoque: 50 | Quantidade vendida: 0 | Custo de aquisição: 0.0
+ID: 15 | Descrição: PRODUTO15 | Preço de custo: 1000.0 | Preço de venda: 1770.0 | Quantidade em estoque: 48 | Quantidade vendida: 1 | Custo de aquisição: 0.0

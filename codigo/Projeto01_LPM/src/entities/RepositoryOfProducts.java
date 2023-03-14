@@ -87,10 +87,13 @@ public class RepositoryOfProducts {
     }
     
     public void venderProduto(int id, int quant) {
+    	int quantMinima = 10;
     	Product produto1 = buscarProdutoPorId(id);
     	produto1.setQuantidadeEstoque(produto1.getQuantidadeEstoque() - quant);
     	produto1.setQuantidadeVendida(quant);
+    		if(produto1.getQuantidadeEstoque() < quantMinima) {
     	System.out.println("Precisamos repor o estoque do produto " + produto1.getDescricao() +" ap�s essa venda");
+    	}
     }
     
     public void comprarProduto(int id, int quant) {
