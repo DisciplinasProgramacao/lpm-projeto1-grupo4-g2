@@ -16,6 +16,7 @@ public class RepositoryOfProductsTest {
 
     private RepositoryOfProducts repository;
     private RepositoryOfProducts repo;
+    private Product produto;
 
     @Before
     public void setup() {
@@ -119,6 +120,25 @@ public class RepositoryOfProductsTest {
         
         // Testa o caso em que um produto tem estoque abaixo do crítico
         assertEquals("Produto Produto 1 com poucas unidades em estoque", repo.estoqueCritico());
+    }
+    
+    @Test
+    public void testVenderProduto() {
+    	repo = new RepositoryOfProducts();
+    	repo.adicionarProduto("ProdutoTest", 10.0, 0);
+    	Product produto = repository.adicionarProduto("ProdutoTest", 10.0, 10);
+        repo.venderProduto(1, 3);
+        assertEquals(10, produto.getQuantidadeEstoque());
+        assertEquals(0, produto.getQuantidadeVendida());
+    }
+    
+    @Test
+    public void testComprarProduto() {
+    	repo = new RepositoryOfProducts();
+    	repo.adicionarProduto("ProdutoTest", 10.0, 0);
+    	Product produto = repository.adicionarProduto("Produto 1", 10.0, 10);
+        repo.comprarProduto(1, 5);
+        assertEquals(10, produto.getQuantidadeEstoque());
     }
 
 }    

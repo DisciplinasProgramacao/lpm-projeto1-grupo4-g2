@@ -138,5 +138,7 @@ public class Product {
 	public String toString() {
         return "ID: " + this.id + " | " + "Descrição: " + this.descricao + " | " + "Preço de custo: " + this.precoCusto + " | " + "Preço de venda: " + precoVenda() + " | " + "Quantidade em estoque: " + this.quantidadeEstoque + " | " + "Quantidade vendida: " + this.quantidadeVendida + " | " + "Custo de aquisição: " + this.custoAquisicao;
     }
+
+	
 }
 

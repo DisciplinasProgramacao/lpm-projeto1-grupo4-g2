@@ -66,6 +66,14 @@ public class RepositoryOfProducts {
     	return valorTotal;
     }
     
+    public int quantidadeDProdutosEmEstoque() {
+    	int quant = 0;
+    	for(Product p : produtos) {
+    		quant += p.getQuantidadeEstoque();
+    	}
+    	return quant;
+    }
+    
     public String estoqueCritico() {
     	for (Product p : produtos) {
     		if(p.getQuantidadeEstoque() < 10) {
@@ -82,7 +90,40 @@ public class RepositoryOfProducts {
     	Product produto1 = buscarProdutoPorId(id);
     	produto1.setQuantidadeEstoque(produto1.getQuantidadeEstoque() - quant);
     	produto1.setQuantidadeVendida(quant);
-    	System.out.println("Precisamos repor o estoque do produto " + produto1.getDescricao() +" após essa venda");
+    	System.out.println("Precisamos repor o estoque do produto " + produto1.getDescricao() +" apï¿½s essa venda");
+    }
+    
+    public void comprarProduto(int id, int quant) {
+    	Product produto1 = buscarProdutoPorId(id);
+    	produto1.setQuantidadeEstoque(produto1.getQuantidadeEstoque() + quant);
+    	
+    	System.out.println("Estoque renovado do  " + produto1.getDescricao() +" Quantidade atualizada: " + produto1.getQuantidadeEstoque());
+    }
+    
+    public double valorVendido() {
+    	double valorTotalVendido = 0;
+    	for(Product p : produtos) {
+    		valorTotalVendido += (p.getQuantidadeVendida() * p.getPrecoVenda()) ;
+    	}
+    	return valorTotalVendido;
+    }
+    
+    public double valorGastoComReposicao() {
+    	double valorGastoComReposicao = 0;
+    	for(Product p : produtos) {
+    		valorGastoComReposicao += (p.getQuantidadeEstoque() * p.getPrecoCusto()) ;
+    	}
+    	return valorGastoComReposicao;
+    }
+    
+    public void estoqueAbaixoDoMinimo () {
+    	int quantidadeMinima = 1000;
+    	for(Product p : produtos) {
+    		if(p.getQuantidadeEstoque() < quantidadeMinima) {
+    			System.out.println(p.getDescricao() + " com apenas " + p.getQuantidadeEstoque() + " unidades em estoque(quantidade critica)");
+    		}
+    	}
+    	
     }
 
 	@Override

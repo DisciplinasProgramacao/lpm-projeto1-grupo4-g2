@@ -100,14 +100,16 @@ public class Program {
 		System.out.println();
 		
 		
-		
 		System.out.println("MENU - Escolha uma opção");
 		System.out.println("1 - Buscar produto");
 		System.out.println("2 - Adicionar produto");
-		System.out.println("3 - Atualizar produto");
+		System.out.println("3 - Quantidade de produtos em estoque");
 		System.out.println("4 - Ver estoque");
 		System.out.println("5 - Valor total do estoque");
 		System.out.println("6 - Vender produto");
+		System.out.println("7 - Comprar produto/repor estoque");
+		System.out.println("8 - Produtos com estoque abaixo do minimo");
+		System.out.println("9 - Balanço da empresa");
 		System.out.println("0 - Sair do programa");
 		int n;
 
@@ -123,16 +125,15 @@ public class Program {
 		            System.out.print("Informe a descrição do produto: ");
 		            sc.nextLine(); // Consumir a quebra de linha após a leitura do inteiro
 		            String descricao = sc.nextLine();
-		            System.out.print("Informe o pre�o de custo do produto: ");
+		            System.out.print("Informe o pre�o de custo do produto: ");
 		            id = sc.nextInt();
-		            System.out.println("Informe a quantidade dispon�vel no estoque: ");
+		            System.out.println("Informe a quantidade dispon�vel no estoque: ");
 		            int estoque = sc.nextInt();
 		            rep1.adicionarProduto(descricao, id, estoque);
 		            System.out.println("Produto adicionado");
 		            break;
 		        case 3:
-		            System.out.println("Informe o produto a ser atualizado"); // Corrigir esse metodo de atualizar
-		            rep1.atualizarProduto(null);
+		            System.out.println("Total de produtos no estoque: " + rep1.quantidadeDProdutosEmEstoque());
 		            break;
 		        case 4:
 		            System.out.println("ESTOQUE");
@@ -152,6 +153,22 @@ public class Program {
 		        	int venda = sc.nextInt();
 		        	rep1.venderProduto(id1, venda);
 		        	break;
+		        case 7: 
+		        	System.out.print("Informe o ID do produto: ");
+		        	int id2 = sc.nextInt();
+		        	System.out.print("Informe a quantidade: ");
+		        	int quant = sc.nextInt();
+		        	rep1.comprarProduto(id2, quant);
+		        	break;
+		        case 8 :
+		        	rep1.estoqueAbaixoDoMinimo();
+		        	break;
+		        case 9:
+		        	System.out.println("Balanço simplicado da empresa: ");
+		        	System.out.println("Valor atual do estoque R$" + rep1.valorTotaldoEstoque() + " - Valor total vendido: R$" + rep1.valorVendido() + " - Valor gasto com reposição de estoque: R$" + rep1.valorGastoComReposicao());
+		        	
+		        	break;
+		        	
 		        case 0:
 		            System.out.println("Encerrando programa...");
 		            break;
