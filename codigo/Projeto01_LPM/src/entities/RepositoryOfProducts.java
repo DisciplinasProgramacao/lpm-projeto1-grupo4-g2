@@ -117,7 +117,7 @@ public class RepositoryOfProducts {
     }
     
     public void estoqueAbaixoDoMinimo () {
-    	int quantidadeMinima = 1000;
+    	int quantidadeMinima = 10;
     	for(Product p : produtos) {
     		if(p.getQuantidadeEstoque() < quantidadeMinima) {
     			System.out.println(p.getDescricao() + " com apenas " + p.getQuantidadeEstoque() + " unidades em estoque(quantidade critica)");

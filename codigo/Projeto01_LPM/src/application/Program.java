@@ -37,9 +37,11 @@ public class Program {
 				if (fields.length >= 2) {
 				String descricao = fields[0];
 				double price = Double.parseDouble(fields[1]);
-				int id = Integer.parseInt(fields[2]);
+				int quantidade = Integer.parseInt(fields[2]);
 				
-				rep1.adicionarProduto(descricao, 0, 3);	
+				
+				
+				rep1.adicionarProduto(descricao, price, quantidade);	
 				
 				}
 				
@@ -56,6 +58,7 @@ public class Program {
 		rep1.buscarProdutoPorId(1).setMargemLucro(25);
 		rep1.buscarProdutoPorId(1).setPrecoCusto(40.0);
 		rep1.buscarProdutoPorId(1).setPrecoVenda(60.0);
+		rep1.venderProduto(1, 10);
 		
 		
 		rep1.buscarProdutoPorId(2).setCustoAquisicao(500.0);
@@ -100,50 +103,62 @@ public class Program {
 		System.out.println();
 		
 		
-		System.out.println("MENU - Escolha uma opção");
-		System.out.println("1 - Buscar produto");
-		System.out.println("2 - Adicionar produto");
-		System.out.println("3 - Quantidade de produtos em estoque");
-		System.out.println("4 - Ver estoque");
-		System.out.println("5 - Valor total do estoque");
-		System.out.println("6 - Vender produto");
-		System.out.println("7 - Comprar produto/repor estoque");
-		System.out.println("8 - Produtos com estoque abaixo do minimo");
-		System.out.println("9 - Balanço da empresa");
-		System.out.println("0 - Sair do programa");
+		
 		int n;
 
 		do {
+			
+			System.out.println("MENU - Escolha uma opção");
+			System.out.println("1 - Buscar produto");
+			System.out.println("2 - Adicionar produto");
+			System.out.println("3 - Quantidade de produtos em estoque");
+			System.out.println("4 - Ver estoque");
+			System.out.println("5 - Valor total do estoque");
+			System.out.println("6 - Vender produto");
+			System.out.println("7 - Comprar produto/repor estoque");
+			System.out.println("8 - Produtos com estoque abaixo do minimo");
+			System.out.println("9 - Balanço da empresa");
+			System.out.println("0 - Sair do programa");
+			
+			System.out.println();
+			System.out.println("===================================================");
+			System.out.println();
+			
 		    n = sc.nextInt();
 		    switch (n) {
 		        case 1: 
 		            System.out.print("Informe o id do produto: ");
 		            int id = sc.nextInt();
 		            System.out.println(rep1.buscarProdutoPorId(id));
+		            System.out.println();
 		            break;
 		        case 2: 
 		            System.out.print("Informe a descrição do produto: ");
 		            sc.nextLine(); // Consumir a quebra de linha após a leitura do inteiro
 		            String descricao = sc.nextLine();
-		            System.out.print("Informe o pre�o de custo do produto: ");
+		            System.out.print("Informe o ID do produto: ");
 		            id = sc.nextInt();
 		            System.out.println("Informe a quantidade dispon�vel no estoque: ");
 		            int estoque = sc.nextInt();
 		            rep1.adicionarProduto(descricao, id, estoque);
 		            System.out.println("Produto adicionado");
+		            System.out.println();
 		            break;
 		        case 3:
 		            System.out.println("Total de produtos no estoque: " + rep1.quantidadeDProdutosEmEstoque());
+		            System.out.println();
 		            break;
 		        case 4:
 		            System.out.println("ESTOQUE");
 		            for (Product p : rep1.buscarTodosOsProdutos()) {
 		                System.out.println(p.toString());
 		            }
+		            System.out.println();
 		            break;
 		        case 5:
 		        	double valorTotal = rep1.valorTotaldoEstoque();
 		        	System.out.printf("Valor total do estoque: R$ " + "%.2f" , valorTotal);
+		        	System.out.println();
 		        	System.out.println();
 		        	break;
 		        case 6:
@@ -152,6 +167,7 @@ public class Program {
 		        	System.out.println("Deseja vender quantos produtos: ");
 		        	int venda = sc.nextInt();
 		        	rep1.venderProduto(id1, venda);
+		        	System.out.println();
 		        	break;
 		        case 7: 
 		        	System.out.print("Informe o ID do produto: ");
@@ -159,14 +175,16 @@ public class Program {
 		        	System.out.print("Informe a quantidade: ");
 		        	int quant = sc.nextInt();
 		        	rep1.comprarProduto(id2, quant);
+		        	System.out.println();
 		        	break;
 		        case 8 :
 		        	rep1.estoqueAbaixoDoMinimo();
+		        	System.out.println();
 		        	break;
 		        case 9:
 		        	System.out.println("Balanço simplicado da empresa: ");
 		        	System.out.println("Valor atual do estoque R$" + rep1.valorTotaldoEstoque() + " - Valor total vendido: R$" + rep1.valorVendido() + " - Valor gasto com reposição de estoque: R$" + rep1.valorGastoComReposicao());
-		        	
+		        	System.out.println();
 		        	break;
 		        	
 		        case 0:
@@ -199,11 +217,11 @@ public class Program {
 		
 	
 		
-		System.out.println(rep1.totalDeProdutosNoEstoque());
-		System.out.println(rep1.valorTotaldoEstoque());
-		System.out.println(rep1.estoqueCritico());
+		//System.out.println(rep1.totalDeProdutosNoEstoque());
+		//System.out.println(rep1.valorTotaldoEstoque());
+		//System.out.println(rep1.estoqueCritico());
 		
-		System.out.println(rep1.buscarProdutoPorId(2));
+		//System.out.println(rep1.buscarProdutoPorId(2));
 		
 
 	}
