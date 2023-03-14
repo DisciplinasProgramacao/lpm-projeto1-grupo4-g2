@@ -24,7 +24,7 @@ public class RepositoryOfProductsTest {
 
     @Test
     public void testAdicionarProduto() {
-        Product produto = repository.adicionarProduto("Produto 1", 10.0);
+        Product produto = repository.adicionarProduto("Produto 1", 10.0, 10);
         assertNotNull(produto);
         assertEquals(1, produto.getId());
         assertEquals("Produto 1", produto.getDescricao());
@@ -33,9 +33,9 @@ public class RepositoryOfProductsTest {
 
     @Test
     public void testBuscarProdutoPorId() {
-        Product produto1 = repository.adicionarProduto("Produto 1", 10.0);
-        Product produto2 = repository.adicionarProduto("Produto 2", 20.0);
-        Product produto3 = repository.adicionarProduto("Produto 3", 30.0);
+        Product produto1 = repository.adicionarProduto("Produto 1", 10.0, 3);
+        Product produto2 = repository.adicionarProduto("Produto 2", 20.0, 4);
+        Product produto3 = repository.adicionarProduto("Produto 3", 30.0, 25);
         Product produtoEncontrado = repository.buscarProdutoPorId(produto2.getId());
         assertNotNull(produtoEncontrado);
         assertEquals(produto2.getId(), produtoEncontrado.getId());
@@ -45,9 +45,9 @@ public class RepositoryOfProductsTest {
 
     @Test
     public void testBuscarTodosOsProdutos() {
-        repository.adicionarProduto("Produto 1", 10.0);
-        repository.adicionarProduto("Produto 2", 20.0);
-        repository.adicionarProduto("Produto 3", 30.0);
+        repository.adicionarProduto("Produto 1", 10.0, 35);
+        repository.adicionarProduto("Produto 2", 20.0, 59);
+        repository.adicionarProduto("Produto 3", 30.0, 50);
         List<Product> produtos = repository.buscarTodosOsProdutos();
         assertNotNull(produtos);
         assertEquals(3, produtos.size());
@@ -55,7 +55,7 @@ public class RepositoryOfProductsTest {
 
     @Test
     public void testAtualizarProduto() {
-        Product produto = repository.adicionarProduto("Produto 1", 10.0);
+        Product produto = repository.adicionarProduto("Produto 1", 10.0, 49);
         produto.setDescricao("Produto atualizado");
         produto.setPrecoCusto(20.0);
         repository.atualizarProduto(produto);
@@ -67,7 +67,7 @@ public class RepositoryOfProductsTest {
 
     @Test
     public void testRetirarDoEstoque() {
-        Product produto = repository.adicionarProduto("Produto 1", 10.0);
+        Product produto = repository.adicionarProduto("Produto 1", 10.0, 40);
         assertNotNull(repository.buscarProdutoPorId(produto.getId()));
         repository.retirarDoEstoque(produto.getId());
         assertNull(repository.buscarProdutoPorId(produto.getId()));
@@ -75,9 +75,9 @@ public class RepositoryOfProductsTest {
     
     @Test
     public void testTotalDeProdutosNoEstoque() {
-    	repository.adicionarProduto("Produto 1", 10.0).setQuantidadeEstoque(2);
-    	repository.adicionarProduto("Produto 2", 20.0).setQuantidadeEstoque(3);
-    	repository.adicionarProduto("Produto 3", 30.0).setQuantidadeEstoque(4);
+    	repository.adicionarProduto("Produto 1", 10.0, 20).setQuantidadeEstoque(2);
+    	repository.adicionarProduto("Produto 2", 20.0, 35).setQuantidadeEstoque(3);
+    	repository.adicionarProduto("Produto 3", 30.0, 70).setQuantidadeEstoque(4);
     	assertEquals(9, repository.totalDeProdutosNoEstoque());
     }
     
@@ -87,11 +87,11 @@ public class RepositoryOfProductsTest {
         RepositoryOfProducts repo = new RepositoryOfProducts();
         
         // Adiciona dois produtos ao repositório
-        Product p1 = repo.adicionarProduto("Produto 1", 10.0);
+        Product p1 = repo.adicionarProduto("Produto 1", 10.0, 67);
         p1.setQuantidadeEstoque(2);
         p1.setPrecoVenda(15.0);
         
-        Product p2 = repo.adicionarProduto("Produto 2", 20.0);
+        Product p2 = repo.adicionarProduto("Produto 2", 20.0, 22);
         p2.setQuantidadeEstoque(3);
         p2.setPrecoVenda(25.0);
         
@@ -106,9 +106,9 @@ public class RepositoryOfProductsTest {
     public void testEstoqueCritico() {
    
     	repo = new RepositoryOfProducts();
-        repo.adicionarProduto("Produto 1", 10);
-        repo.adicionarProduto("Produto 2", 20);
-        repo.adicionarProduto("Produto 3", 30);
+        repo.adicionarProduto("Produto 1", 10, 86);
+        repo.adicionarProduto("Produto 2", 20, 56);
+        repo.adicionarProduto("Produto 3", 30, 44);
     	
         // Testa o caso em que todos os produtos têm estoque acima do crítico
         assertEquals("Estoque checado", repo.estoqueCritico());

@@ -12,10 +12,12 @@ public class RepositoryOfProducts {
         this.proximoId = 1;
     }
 
-    public Product adicionarProduto(String descricao, double precoCusto) {
+    public Product adicionarProduto(String descricao, double precoCusto, int estoque) {
         Product produto = new Product(descricao, precoCusto, this.proximoId);
         this.produtos.add(produto);
         this.proximoId++;
+        produto.precoVenda();
+        produto.setQuantidadeEstoque(estoque);
         return produto;
     }
 
@@ -74,6 +76,13 @@ public class RepositoryOfProducts {
     		}
     	}
 		return "Estoque checado";
+    }
+    
+    public void venderProduto(int id, int quant) {
+    	Product produto1 = buscarProdutoPorId(id);
+    	produto1.setQuantidadeEstoque(produto1.getQuantidadeEstoque() - quant);
+    	produto1.setQuantidadeVendida(quant);
+    	System.out.println("Precisamos repor o estoque do produto " + produto1.getDescricao() +" após essa venda");
     }
 
 	@Override

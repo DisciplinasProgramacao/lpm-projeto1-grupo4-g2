@@ -39,7 +39,7 @@ public class Program {
 				double price = Double.parseDouble(fields[1]);
 				int id = Integer.parseInt(fields[2]);
 				
-				rep1.adicionarProduto(descricao, 0);	
+				rep1.adicionarProduto(descricao, 0, 3);	
 				
 				}
 				
@@ -107,6 +107,7 @@ public class Program {
 		System.out.println("3 - Atualizar produto");
 		System.out.println("4 - Ver estoque");
 		System.out.println("5 - Valor total do estoque");
+		System.out.println("6 - Vender produto");
 		System.out.println("0 - Sair do programa");
 		int n;
 
@@ -122,9 +123,11 @@ public class Program {
 		            System.out.print("Informe a descriÃ§Ã£o do produto: ");
 		            sc.nextLine(); // Consumir a quebra de linha apÃ³s a leitura do inteiro
 		            String descricao = sc.nextLine();
-		            System.out.print("Informe o id do produto: ");
+		            System.out.print("Informe o preço de custo do produto: ");
 		            id = sc.nextInt();
-		            rep1.adicionarProduto(descricao, id);
+		            System.out.println("Informe a quantidade disponível no estoque: ");
+		            int estoque = sc.nextInt();
+		            rep1.adicionarProduto(descricao, id, estoque);
 		            System.out.println("Produto adicionado");
 		            break;
 		        case 3:
@@ -141,6 +144,13 @@ public class Program {
 		        	double valorTotal = rep1.valorTotaldoEstoque();
 		        	System.out.printf("Valor total do estoque: R$ " + "%.2f" , valorTotal);
 		        	System.out.println();
+		        	break;
+		        case 6:
+		        	  System.out.print("Informe o id do produto: ");
+			          int id1 = sc.nextInt();
+		        	System.out.println("Deseja vender quantos produtos: ");
+		        	int venda = sc.nextInt();
+		        	rep1.venderProduto(id1, venda);
 		        	break;
 		        case 0:
 		            System.out.println("Encerrando programa...");
