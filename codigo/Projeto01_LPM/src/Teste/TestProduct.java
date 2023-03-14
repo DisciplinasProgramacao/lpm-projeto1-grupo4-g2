@@ -40,6 +40,7 @@ public class TestProduct {
 		assertEquals("Estoque crítico, contatar fornecedor", p.nivelEstoque(p.getDescricao(), p.getId())); // estoque crítico quando quantidade é menor que 10
 		p.setQuantidadeEstoque(10);
 		assertEquals("Estoque ok", p.nivelEstoque(p.getDescricao(), p.getId())); // estoque ok quando quantidade é maior ou igual a 10
+		assertTrue(false);
 	}
 	
 }

@@ -32,6 +32,7 @@ public class RepositoryOfProducts {
         return this.produtos;
     }
 
+    //Confirmar se esta na especificção
     public void atualizarProduto(Product produtoAtualizado) {
         Product produtoAntigo = this.buscarProdutoPorId(produtoAtualizado.getId());
         if (produtoAntigo != null) {

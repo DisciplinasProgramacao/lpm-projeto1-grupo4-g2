@@ -59,7 +59,7 @@ public class Product {
 	
 	public void setMargemLucro(double margemLucro) {
 
-		this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100;
+		this.margemLucro = precoCusto * ((Math.random() * 50) + 30) / 100; // Receber a margem de lucro 
 		setPrecoVenda(precoVenda);
 	    double valorMargemLucro = margemLucro / 100.0;
 	    double precoVenda = precoCusto * (1 + valorMargemLucro + taxes);
@@ -68,7 +68,7 @@ public class Product {
 	        this.margemLucro = valorMargemLucro;
 	        this.precoVenda = Math.round(precoVenda * 100) / 100.0;
 	    } else {
-	        throw new IllegalArgumentException("A margem de lucro deve estar entre 30 e 80% do valor do preço de custo.");
+	        //throw new IllegalArgumentException("A margem de lucro deve estar entre 30 e 80% do valor do preço de custo.");
 	    }
 
 	}
