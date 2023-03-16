@@ -59,11 +59,17 @@ public class RepositoryOfProducts {
     }
     
     public int valorTotaldoEstoque() {
-    	int valorTotal = 0;
+    	double valorTotal = 0;
+    	for(int i = 0; i < 10; i++) {
+        Product produto1 = buscarProdutoPorId(id);
+    		produto1.
+    	}
+    	
+    	/*int valorTotal = 0;
     	for(Product p : produtos) {
     		valorTotal += (p.getQuantidadeEstoque() * p.getPrecoVenda()) ;
     	}
-    	return valorTotal;
+    	return valorTotal;*/
     }
     
     public int quantidadeDProdutosEmEstoque() {

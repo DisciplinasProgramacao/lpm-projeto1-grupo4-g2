@@ -16,7 +16,7 @@ public class RepositoryOfProductsTest {
     public void setUp() {
         repository = new RepositoryOfProducts();
         repository.adicionarProduto("Produto 1", 10.0, 20);
-        repository.adicionarProduto("Produto 2", 20.0, 30);
+        repository.adicionarProduto("Produto 2", 20.0, 50);
     }
 
     @Test
